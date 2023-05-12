@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="three" />
+    <button type="submit" id="send">전송</button>
+  </body>
+  <script>
+    function game2(num) {
+      let num2 = String(num);
+
+      if (num2.charAt(num2.length - 1) === "9") {
+        console.log("9라서 짝짝짝");
+      } else if (num2.charAt(num2.length - 1) === "6") {
+        console.log("6이라서 짝짝짝");
+      } else if (num2.charAt(num2.length - 1) === "3") {
+        console.log("3은 당연히 짝짝짝");
+      } else {
+        console.log("3,6,9아니니까 박수안쳐");
+      }
+    }
+  </script>
+</html>
