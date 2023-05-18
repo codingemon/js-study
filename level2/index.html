@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 제이쿼리 -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <form action="success.html">
+          <div class="my-3">
+            <input type="text" class="form-control" id="email" />
+          </div>
+          <div class="my-3">
+            <input type="password" class="form-control" id="password" />
+          </div>
+          <button type="submit" class="btn btn-primary" id="send">전송</button>
+          <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- one-way UI 애니메이션 만드는 법 -->
+    <!-- 1. 시작스타일
+       2. 최종스타일 (class로 만들어놓기) 
+       3. 원할 때 최종스타일로 변하라 코드짬
+       4. transition 추가 
+      -->
+
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">Navbar</span>
+        <span class="badge bg-dark">Dark 🔄</span>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <ul class="list-group">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">A fourth item</li>
+      <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+    <button id="modalClick">로그인</button>
+
+    <script>
+      // var 변수이름 = 변수에 넣을 값
+
+      var count = 0;
+
+      $(".badge").on("click", function () {
+        count += 1;
+        console.log(count);
+      });
+
+      // badge  클릭횟수가 홀수면 내부 글자를 light로 변경
+      // badge  클릭횟수가 짝수면 내부 글자를 dark로 변경
+    </script>
+
+    <!-- 
+    <script>
+      function 삼육구게임(num) {
+        if (n % 10 == 3 || n % 10 == 6 || n % 10 == 9) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+
+      삼육구게임(3);
+    </script> -->
+
+    <!-- 삼육구게임 -->
+    <!-- <script>
+      function game(num) {
+        if (num % 3 == 0) {
+          console.log("박수");
+        } else if (num % 9 == 0) {
+          console.log("박수 박수");
+        } else {
+          console.log("통과");
+        }
+      }
+      game(99);
+    </script> -->
+
+    <!-- 공인중개사 합격 -->
+    <!-- <script>
+      function 합격했냐(a, b) {
+        if (a < 40 || b < 40) {
+          console.log("불합격");
+        } else if (a + b >= 120) {
+          console.log("합격");
+        } else {
+          console.log("불합격");
+        }
+      }
+      합격했냐(50, 64);
+    </script> -->
+
+    <script>
+      // if (1 == 3) {
+      //   console.log("맞아요!!");
+      // } else if (3 == 3) {
+      //   console.log("맞아용");
+      // }
+
+      // 전송버튼 누르면
+      // 저기 input에 입력한값이 공백이면(if else) 알림창띄워주세요 ~
+      $("form").on("submit", function (e) {
+        if (document.getElementById("email").value == "") {
+          alert("아이디입력안함");
+          e.preventDefault();
+        } else if (document.getElementById("password").value == "") {
+          alert("비밀번호를 입력하세요.");
+          e.preventDefault();
+        } else if (document.getElementById("password").value.length < 6) {
+          alert("비밀번호가 짧다야");
+        }
+      });
+    </script>
+
+    <script>
+      // document
+      //   .getElementById("modalClick")
+      //   .addEventListener("click", function () {
+      //     document.querySelector(".black-bg").classList.add("show-modal");
+      //   });
+
+      $("#modalClick").on("click", function () {
+        $(".black-bg").addClass("show-modal");
+      });
+    </script>
+
+    <script>
+      document
+        .querySelector(".navbar-toggler")
+        .addEventListener("click", function () {
+          document.querySelectorAll(".list-group")[0].classList.toggle("show");
+        });
+    </script>
+
+    <!-- 부트스트랩 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
