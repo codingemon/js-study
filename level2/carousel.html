@@ -20,6 +20,16 @@
     ></script>
   </head>
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">도라에몽 주머니샵</span>
+        <span class="ms-auto mx-3 badge bg-dark">야간모드</span>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
     <div style="overflow: hidden">
       <div class="slide-container">
         <div class="slide-box">
@@ -39,9 +49,18 @@
     <button class="slide-3">3</button>
     <button class="next">다음</button>
     <button class="back">이전</button>
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas
+      voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat
+      sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur
+      praesentium exercitationem.
+    </div>
+    <div style="height: 1000px"></div>
+
+    <!-- 사진 슬라이드 -->
     <script>
       var 지금사진 = 1;
-
       // 숙제
       document.querySelector(".slide-1").addEventListener("click", function () {
         document.querySelector(".slide-container").style.transform =
@@ -73,6 +92,23 @@
       //         "translateX(-100vw)";
       //       // 밑에 코드는 위에 사진을 보여주고 변수에 + 1 을 해달라는 의미.
       //       지금사진 += 1;
+    </script>
+
+    <!-- 유저 스크롤바 -->
+    <script>
+      // 스크롤이벤트
+
+      $(window).on("scroll", function () {
+        $(window).scrollTop(100);
+      });
+    </script>
+
+    <script>
+      $(".lorem").on("scroll", function () {
+        var 스크롤양 = document.querySelector(".lorem").scrollTop;
+        var 실제높이 = document.querySelector(".lorem").scrollHeight;
+        console.log(스크롤양, 실제높이);
+      });
     </script>
 
     <script
