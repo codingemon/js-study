@@ -103,12 +103,34 @@
       });
     </script>
 
+    <!-- 1. 숙제 -->
+    <script>
+      // if ( 페이지 스크롤바 100이상 내리면){
+      //   로고 폰트사이즈 줄이셈
+      // }
+
+      $(window).on("scroll", function () {
+        if (window.scrollY > 100) {
+          $(".navbar-brand").css("font-size", "20px");
+        } else {
+          $(".navbar-brand").css("font-size", "25px");
+        }
+      });
+    </script>
+
     <script>
       $(".lorem").on("scroll", function () {
         var 스크롤양 = document.querySelector(".lorem").scrollTop;
         var 실제높이 = document.querySelector(".lorem").scrollHeight;
-        console.log(스크롤양, 실제높이);
+        var 높이 = document.querySelector(".lorem").clientHeight;
+        if (스크롤양 + 높이 > 실제높이 - 10) {
+          alert("다 읽었어요");
+        }
       });
+      // . # 없으면 그냥 태그로 찾아주세요
+      document.documentElement.scrollHeight;
+      document.querySelector("html").clientHeight;
+      window.scrollY;
     </script>
 
     <script
