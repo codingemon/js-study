@@ -12,8 +12,8 @@
 // }
 
 // for문법은 코드복붙보다는 반복실행이 맞음(별차이없음)
-
-for (let i = 0; i < 5; i++) {
+// for (let i = 0; i < 5; i++)  내가 5개를 띄우게 했던것 밑은 답
+for (let i = 0; i < $(".tab-button").length; i++) {
   $(".tab-button")
     .eq(i)
     .on("click", function () {
