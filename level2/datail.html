@@ -15,6 +15,13 @@
     ></script>
   </head>
   <body>
+    <div class="container mt-3">
+      <div class="card p-3">
+        <span class="car-title">상품명</span>
+        <span class="price">가격</span>
+      </div>
+    </div>
+
     <div class="container mt-5">
       <ul class="list">
         <li class="tab-button" data-id="0">Products</li>
@@ -31,6 +38,25 @@
         <p>배송정보입니다. Shipping</p>
       </div>
     </div>
+
+    <script>
+      // array 자료형 [자료1, 자료2, 자료3 ...]
+      // array 쓰면 여러 자료를 변수 하나에 저장가능
+      // 순서 개념이 있음, array는 그래서 자료간 정렬도 가능
+      var car = ["소나타", 50000, "white"];
+      // car.sort(); 정렬시켜줌
+      // car.slice(1,3); 중간에 자르기도 가능
+
+      // object 자료형
+      // object { 이름1(key): 자료1(value), 이름2 : 자료2 ...}
+      // 순서 개념이 없음
+      var car2 = { name: "소나타", price: 50000 };
+      // console.log(car2["name"]);
+      // console.log(car2.price);
+
+      document.querySelector(".car-title").innerHTML = car2["name"];
+      document.querySelector(".price").innerHTML = car2["price"];
+    </script>
 
     <script src="tab.js"></script>
 
