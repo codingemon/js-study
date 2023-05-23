@@ -48,6 +48,7 @@
       <select class="form-select mt-2">
         <option>모자</option>
         <option>셔츠</option>
+        <option>바지</option>
       </select>
       <select class="form-select mt-2 form-hide">
         <option>95</option>
@@ -75,8 +76,23 @@
     </script>
 
     <script>
+      // js로 html 생성
+      // var a = document.createElement("p");
+      // a.innerHTML = "안녕";
+      // document.querySelector("#test").appendChild(a);
+      // var 탬플릿 = "<p>안녕</p>";
+      // document.querySelector("#test").insertAdjacentHTML("beforeend", 템플릿);
+
       // 유저가 셔츠를 고르면
       // form-hide 떼어주세요~
+
+      // 내가 짜본 코드 작동 안돼
+      // $(".form-select")
+      //   .eq(2)
+      //   .on("input", function () {
+      //     var a = document.createElement("p");
+      //     a.innerHTML = "28";
+      //   });
 
       $(".form-select")
         .eq(0)
@@ -84,6 +100,11 @@
           var value = $(".form-select").eq(0).val();
           if (value == "셔츠") {
             $(".form-select").eq(1).removeClass("form-hide");
+          } else if (value == "바지") {
+            $(".form-select").eq(1).removeClass("form-hide");
+            $(".form-select").eq(1).html("");
+            var 템플릿 = `<option>28</option><option>30</option>`;
+            $(".form-select").eq(1).append(템플릿);
           }
         });
     </script>
