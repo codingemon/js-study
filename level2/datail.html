@@ -43,6 +43,18 @@
       </div>
     </div>
 
+    <form class="container my-5 form-group">
+      <p>상품선택</p>
+      <select class="form-select mt-2">
+        <option>모자</option>
+        <option>셔츠</option>
+      </select>
+      <select class="form-select mt-2 form-hide">
+        <option>95</option>
+        <option>100</option>
+      </select>
+    </form>
+
     <script>
       // array 자료형 [자료1, 자료2, 자료3 ...]
       // array 쓰면 여러 자료를 변수 하나에 저장가능
@@ -62,6 +74,19 @@
       document.querySelector(".price").innerHTML = car2.price[0];
     </script>
 
+    <script>
+      // 유저가 셔츠를 고르면
+      // form-hide 떼어주세요~
+
+      $(".form-select")
+        .eq(0)
+        .on("input", function () {
+          var value = $(".form-select").eq(0).val();
+          if (value == "셔츠") {
+            $(".form-select").eq(1).removeClass("form-hide");
+          }
+        });
+    </script>
     <script src="tab.js"></script>
 
     <!-- 부트스트랩 -->
