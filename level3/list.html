@@ -29,17 +29,89 @@
       </div>
     </div>
 
+    <div class="container my-3">
+      <button class="btn btn-danger" id="price">가격순정렬</button>
+    </div>
+
+    <div class="container my-3">
+      <button class="btn btn-danger" id="name">상품명 다나가순 정렬</button>
+    </div>
+
+    <div class="container my-3">
+      <button class="btn btn-danger" id="priceFilter">
+        6만원 이하 상품만 보기
+      </button>
+    </div>
+
     <div class="container">
       <button class="btn btn-danger" id="more">더보기</button>
     </div>
+
     <script>
       var products = [
         { id: 0, price: 70000, title: "Blossom Dress" },
         { id: 1, price: 50000, title: "Springfield Shirt" },
         { id: 2, price: 60000, title: "Black Monastery" },
       ];
+
+      $("#price").click(function () {
+        products.sort(function (a, b) {
+          // {} - {} 이기 때문에 a - b 로 넣으면 작동이 안되었다
+          // a.price - b.price 이런식으로 서로 뺄수 있게 만들어줬다.
+          return a.price - b.price;
+        });
+        // 1.카드 3개있던 div의 내용제거
+        $(".row").html("");
+        //2. products 갯수만큼 생성
+        products.forEach((a, i) => {
+          var 템플릿 = `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100" />
+            <h5>${a.title}</h5>
+            <p>가격 : ${a.price}</p>
+          </div>`;
+          $(".row").append(템플릿);
+        });
+      });
+
+      // 숙제 1
+      $("#priceFilter").click(function () {
+        var newProducts = products.filter(function (a, b) {
+          return a.price <= 60000;
+        });
+        $(".row").html("");
+      });
+      products.forEach((a, i) => {
+        var 템플릿 = `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100" />
+            <h5>${a.title}</h5>
+            <p>가격 : ${a.price}</p>
+          </div>`;
+        $(".row").append(템플릿);
+      });
+      // array 자료 만들어보기
+      // 숫자 정렬
+      // 어레이.sort(function (a, b) {
+      //   return a - b; // 숫자 오름차순 정렬
+      //   return b - a; // 숫자 내림차순 정렬
+      // });
+      // var 어레이 = [7, 3, 5, 2, 40];
+      // var 어레이2 = ["a", "b", "c"];
+      // 어레이.sort(function (a, b) {
+      //   return a - b; // 숫자 오름차순 정렬
+      // });
+      // console.log(어레이);
+      // 밑에는 filter 함수
+      // ex 6만원 이하 상품만 보여주세요 filter 사용
+      // var 새어레이 = 어레이.filter(function (a) {
+      //   return a < 4;
+      // });
+      // console.log(새어레이);
+
+      // var 새어레이 = 어레이.map(function (a) {
+      //   return a * 4;
+      // });
     </script>
-    <script>
+    <!-- <script>
       // a -> 프로덕트안에 있는 하나하나의 데이터
       products.forEach((a, i) => {
         var 템플릿 = `<div class="col-sm-4">
@@ -49,7 +121,7 @@
         </div>`;
         $(".row").append(템플릿);
       });
-    </script>
+    </script> -->
     <script>
       $("#more").click(function () {
         $.get("https://codingapple1.github.io/js/more1.json").done((data) => {
