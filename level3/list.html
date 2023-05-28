@@ -34,13 +34,11 @@
     </div>
 
     <div class="container my-3">
-      <button class="btn btn-danger" id="name">상품명 다나가순 정렬</button>
+      <button class="btn btn-danger" id="sort1">상품명 다나가순 정렬</button>
     </div>
 
     <div class="container my-3">
-      <button class="btn btn-danger" id="priceFilter">
-        6만원 이하 상품만 보기
-      </button>
+      <button class="btn btn-danger" id="filter">6만원 이하 상품만 보기</button>
     </div>
 
     <div class="container">
@@ -73,21 +71,61 @@
         });
       });
 
-      // 숙제 1
-      $("#priceFilter").click(function () {
-        var newProducts = products.filter(function (a, b) {
-          return a.price <= 60000;
+      // 숙제 60000원 이하 상품만 보기 (코딩애플 코딩)
+      // return 양수 -> a 우측으로감
+      // Return 음수 -> b 우측으로감
+      $("#sort1").click(function () {
+        products.sort(function (a, b) {
+          if (a.title < b.title) {
+            return 1;
+          } else {
+            return -1;
+          }
         });
-        $(".row").html("");
-      });
-      products.forEach((a, i) => {
-        var 템플릿 = `<div class="col-sm-4">
+        $(".row").html(""); // html 지우고
+        products.forEach((a, i) => {
+          var 템플릿 = `<div class="col-sm-4">
             <img src="https://via.placeholder.com/600" class="w-100" />
             <h5>${a.title}</h5>
             <p>가격 : ${a.price}</p>
           </div>`;
-        $(".row").append(템플릿);
+          $(".row").append(템플릿); // html 생성
+        });
       });
+
+      // 숙제 1
+      // 60000원 이하만 뜨게 만들기
+      // 내 코드는 실패
+      // $("#filter").click(function () {
+      //   var newProducts = products.filter(function (a, b) {
+      //     return a.price <= 60000;
+      //   });
+      //   $(".row").html("");
+      // });
+      // products.forEach((a, i) => {
+      //   var 템플릿 = `<div class="col-sm-4">
+      //       <img src="https://via.placeholder.com/600" class="w-100" />
+      //       <h5>${a.title}</h5>
+      //       <p>가격 : ${a.price}</p>
+      //     </div>`;
+      //   $(".row").append(템플릿);
+      // });
+
+      $("#filter").click(function () {
+        var newProducts = products.filter(function (a) {
+          return a.price <= 60000;
+        });
+        $(".row").html(""); // html 지우고
+        newProducts.forEach((a, i) => {
+          var 템플릿 = `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100" />
+            <h5>${a.title}</h5>
+            <p>가격 : ${a.price}</p>
+          </div>`;
+          $(".row").append(템플릿); // html 생성
+        });
+      });
+
       // array 자료 만들어보기
       // 숫자 정렬
       // 어레이.sort(function (a, b) {
