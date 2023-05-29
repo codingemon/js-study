@@ -81,7 +81,7 @@
       // 3. localStorage 에 [글자] 저장
 
       $(".buy").click(function (e) {
-        var title = $(e.target).siblings("h5").text(); // siblings 형제가져와주세요
+        var title = $(e.target).siblings("h5").text(); // silblings 형제 선택
         if (localStorage.getItem("cart") != null) {
           var 꺼낸거 = JSON.parse(localStorage.cart);
           꺼낸거.push(title);
