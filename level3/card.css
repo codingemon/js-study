@@ -1,0 +1,20 @@
+.card-background {
+  height: 3000px;
+  margin-top: 800px;
+  margin-bottom: 1600px;
+}
+
+/* 카드이미지 스타일링 */
+.card-box img {
+  display: block;
+  /* 가운데 정렬할려고 */
+  margin: auto;
+  max-width: 80%;
+}
+/* 카드에 sticky속성 주기*/
+.card-box {
+  position: sticky;
+  /* 몇 픽셀 고정될건지 */
+  top: 400px;
+  margin-top: 200px;
+}
