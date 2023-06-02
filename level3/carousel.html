@@ -33,7 +33,7 @@
     <div style="overflow: hidden">
       <div class="slide-container">
         <div class="slide-box">
-          <img src="./img/car1.png" />
+          <img src="./img/car1.png" draggable="false" />
         </div>
         <div class="slide-box">
           <img src="./img/car2.png" />
@@ -60,10 +60,31 @@
 
     <script>
       // 알아야할 이벤트 1. mousedown 2. mouseup 3. mousemove + (e.clientX 현재마우스위치 X좌표)
+      let 시작좌표 = 0;
+      let 눌렀냐 = false;
+
+      $(".slide-box")
+        .eq(0)
+        .on("mousedown", function (e) {
+          시작좌표 = e.clientX;
+          눌렀냐 = true;
+        });
+
       $(".slide-box")
         .eq(0)
         .on("mousemove", function (e) {
-          console.log(e.clientX);
+          if (눌렀냐 === true) {
+            $(".slide-container").css(
+              "transform",
+              `translateX( ${e.clientX - 시작좌표}px )`
+            );
+          }
+        });
+
+      $(".slide-box")
+        .eq(0)
+        .on("mouseup", function (e) {
+          눌렀냐 = false;
         });
     </script>
 
