@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="quiz">
+      <h4>물에 빠지면 누구먼저 구할 것인가</h4>
+      <button>와이프</button>
+      <button>부모님</button>
+      <button>키우던 개</button>
+    </div>
+
+    <script>
+      //   switch 문법 설명
+
+      //   let 변수 = 2 + 2;
+
+      //   // if는 다양한 조건식 가능
+      //   // 스위치는 변수 1개만 테스트
+      //   // 대신 switch는 깔끔해보임. 변수하나만 검사할 때 간편하게 가능
+
+      //   switch (변수) {
+      //     case 3:
+      //       alert("변수가 3이네요");
+      //       break; // 실행을 중지해주세요.
+      //     case 4:
+      //       alert("변수가 4이네요");
+      //       break;
+      //     default: // else와 비슷하다
+      //       alert("아무것도 해당안됨");
+      //   }
+    </script>
+    <script>
+      document.querySelector("#quiz").addEventListener("click", function (e) {
+        switch (e.target.innerHTML) {
+          case "와이프":
+            alert("와이프를 사랑하시네요?");
+            break;
+          case "부모님":
+            alert("부모님을 선택하셨습니다");
+            break;
+          case "키우던 개":
+            alert("강아지를 살렸습니다");
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>
