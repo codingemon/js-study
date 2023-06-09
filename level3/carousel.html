@@ -59,49 +59,45 @@
     <div style="height: 1000px"></div>
 
     <script>
-      // 알아야할 이벤트 1. mousedown 2. mouseup 3. mousemove + (e.clientX 현재마우스위치 X좌표)
-      let 시작좌표 = 0;
-      let 눌렀냐 = false;
+          // 알아야할 이벤트 1. mousedown 2. mouseup 3. mousemove + (e.clientX 현재마우스위치 X좌표)
+          // Hammer.js  - 브라우저간 호환성잡아줌, 이벤트리스너6개말고 1개만필요, 스와이프,Pinch,rotate 이벤트리스너도 제공
+          let 시작좌표 = 0;
+          let 눌렀냐 = false;
 
-      $(".slide-box")
-        .eq(0)
-        .on("mousedown", function (e) {
-          시작좌표 = e.clientX;
-          눌렀냐 = true;
-        });
+          $(".slide-box")
+            .eq(0)
+            .on("touchstart", function (e) {
+              시작좌표 = e.touches[0].clientX;
+              눌렀냐 = true;
+            });
 
-      $(".slide-box")
-        .eq(0)
-        .on("mousemove", function (e) {
-          if (눌렀냐 === true) {
-            $(".slide-container").css(
-              "transform",
-              `translateX( ${e.clientX - 시작좌표}px )`
-            );
-          }
-        });
+          $(".slide-box")
+            .eq(0)
+            .on("touchmove", function (e) {
+              if (눌렀냐 === true) {
+                $(".slide-container").css(
+                  "transform",
+                  `translateX( ${e.touches[0].clientX - 시작좌표}px )`
+                );
+              }
+            });
 
-      $(".slide-box")
-        .eq(0)
-        .on("mouseup", function (e) {
-          눌렀냐 = false;
+            $('.slide-box').eq(0).on('fouchend', function(e){
+        눌렀냐 = false;
 
-          if (e.clientX - 시작좌표 < -100) {
-            $(".slide-container")
-              .css("transition", "all 0.5s")
-              .css("transform", "translateX(-100vw)");
-          } else {
-            $(".slide-container")
-              .css("transition", "all 0.5s")
-              .css("transfrom", "translateX(0vw)");
-          }
-          setTimeout(() => {
-            $(".slide-container").css("transition", "none");
-          }, 500);
-        });
+        if (e.changedTouches[0].clientX - 시작좌표 < -100) {
+          $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(-100vw)');
+        } else {
+          $('.slide-container').css('transition', 'all 0.5s').css('transform', 'translateX(0vw)');
+        }
+        setTimeout(()=>{
+          $('.slide-container').css('transition', 'none')
+        }, 500)
+
+      });
 
 
-        --
+            --
     </script>
 
     <!-- 사진 슬라이드 -->
