@@ -1,0 +1,57 @@
+<div></div>
+
+<script>
+  "use strict"; //엄격 strict mode
+
+  // 1. this keyword(1)
+  console.log(this); // window
+
+  //   function 함수() {
+  //     console.log(this);
+  //   }
+  // 함수() // window
+  //   함수(); // undefined
+
+  // 2. this 오븢[ㄱ트 내 함수안에서 쓰면
+  //   var 오브젝트 = {
+  //     data: "kim",
+  //     함수: function () {
+  //       // 오브젝트 내 함수안에서 쓰면 그 함수를 가지고 있는 오브젝트를 뜻함
+  //       console.log(this); // 나를 포함하고 있는 오브젝트
+  //     },
+  //   };
+
+  //   오브젝트.data;
+  //   오브젝트.함수();
+
+  // Q.이 this는 출력하면 뭐가나올까요?
+  //   var 문제 = {
+  //     data: {
+  //       함수: function () {
+  //         console.log(this);
+  //       },
+  //     },
+  //   };
+  //   문제.data.함수(); // 오브젝트.data가 나온다.
+
+  // Arrow Fucntion 특징: this 값을 함수밖에 있던거 그대로 씀
+  var 문제 = {
+    data: {
+      함수: () => {
+        console.log(this);
+      },
+    },
+  };
+  문제.data.함수(); // window
+
+  var 오브젝트 = {
+    data: {
+      함수() {
+        console.log(this);
+      },
+    },
+  };
+  오브젝트.data.함수();
+
+  // 함수나 변수를 전역공간에서 만들면 -> {window}에 보관합니다.
+</script>
