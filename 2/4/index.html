@@ -1,0 +1,36 @@
+<div>
+  <button id="버튼">버튼이세세셈</button>
+</div>
+<script>
+  // 연습문제
+
+  //   var 사람 = {
+  //     name: "손흥민",
+  //     sayHi() {
+  //       console.log("안녕 " + this.name + "이야");
+  //     },
+  //   };
+  //   사람.sayHi();
+
+  // 오브젝트 내의 데이터를 전부 더해주는 메소드만들기
+  var 자료 = {
+    data: [1, 2, 3, 4, 5],
+  };
+
+  자료.전부더하기 = function () {
+    var 합 = 0;
+    this.data.forEach(function (a) {
+      합 = 합 + a;
+    });
+    console.log(합);
+  };
+  자료.전부더하기();
+
+  // setTimeout
+  document.getElementById("버튼").addEventListener("click", function () {
+    var 버튼 = this;
+    setTimeout(function () {
+      console.log(버튼.innerHTML);
+    }, 1000);
+  });
+</script>
