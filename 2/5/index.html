@@ -1,0 +1,49 @@
+<div></div>
+
+<script>
+  // variables (1)
+
+  // 선언,할당,범위 (특징)
+  // var 재선언O, 재할당O, 범위 function
+  //var 변수이름 = 저장할값
+  var 이름 = "kim"; // 자료를 임시저장하는 공간
+  // 이름;
+  // 재선언 O
+  var 이름 = "park"; // 가능
+
+  // let 재선언 X, 재할당O
+  let 이름1 = "kim";
+  이름1 = "park"; // 가능
+  // let 이름1 = 'park' //재선언 금지
+
+  // const 재선언 X, 재할당X constant(변하지않는 값)
+  const 나이 = 20;
+  // const 나이 = 30; // 재선언X
+  // 나이 = 21; // 재할당 X
+  const 사람 = { 이름: "kim" };
+  사람.이름 = "Park"; // 오브젝트 내부 값 변경해도 에러안남 . 재할당이 아니라 변경일뿐이다.
+
+  // 수정불가능한 오브젝트를 만들고 싶으면?
+  Object.freeze(사람); // 사람이라는 오브젝트를 수정불가능하게 freeze 해주세요. // kim
+
+  // 변수는 존재 범위라는게 있음.
+  // function 함수(){
+  //   var 이름 = 'Kim'; //function안에서만 존재함
+  //   이름;
+  // }
+  // console.log(이름); var 는 function에서만 산다.
+
+
+  function 함수(){
+    var 이름 = 'Kim';
+    이름;
+  }
+
+  // let const 중괄호가 생존 범위다.
+  if(true){
+    let 이름 = 'park'; // 중괄호에 사는 변수 let
+  }
+  for (let v = 1;){
+
+  }
+</script>
