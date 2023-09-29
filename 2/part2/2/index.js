@@ -2,7 +2,7 @@
 
 // arguments의 단점
 // a,b,c라는 파라미터만 콘솔창에 출력하고 싶다(반복문돌리고 싶다)
-// arguments라는 자료를 쪼개고 그래야..
+// arguments라는  자료를 쪼개고 그래야
 function 함수(a, b, c) {
   for (var i = 0; i < arguments.length; i++) {
     console.log(arguments[i]);
