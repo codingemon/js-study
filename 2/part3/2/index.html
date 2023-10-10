@@ -1,0 +1,31 @@
+<!-- // import/export
+// (library.js)
+// .js파일을 만들어서 자스크립트를 보관합니다. -->
+
+<!-- 기본 -->
+<!-- <script src="index.js"></script> -->
+
+<script type="module">
+  // import 가져올거 from '경로'
+  //   import { a } from "/index.js"; // index.js에 있던 모든 내용을 가져오지 않음.
+  //   console.log(a);
+
+  //   Q.epoxrt{a,b} 했던 a를 import 해오고 싶으면?
+  // import{변수명} from '경로'
+  // 이렇게 해서 3개 불러오기 가능
+  //   import 작명,{a,b} from '/index.js';
+
+  // 4. 변수묭이 마음에 안들면 새로 짓자.
+  // import{변수 as 새변수명}from'경로'
+  import { a as 별명 } from "/2/index.js";
+  console.log(a);
+
+  // 5. 모든걸 다 import 해오는 * 기호
+  // import * as 변수들명 from '경로'
+
+  // 옛날 방식 : var 변수 = require('경로')
+  //   var 임포트해온것들 = require("/2/index.js");
+
+  // IE에선 안됨
+  // 프론트엔드 개발에선 <script src=""> 쓰자
+</script>
