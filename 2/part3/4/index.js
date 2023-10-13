@@ -75,5 +75,5 @@ var 프로미스 = new Promise(function (성공, 실패) {
 $.ajax()
   .done(function () {})
   .fail();
-// fetch()
+// fetch().
 fetch().then().catch();
