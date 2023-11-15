@@ -4,12 +4,12 @@ var ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth - 100;
 canvas.height = window.innerHeight - 100;
 
-// 등장 캐릭터의 속성부터 object 자료에 정리해두면 편리
+// 등장 캐릭터의 속성부터 object 자료에 정리
 var dino = {
-  // 공룡 등장 좌표
+  // 도라에몽 등장 좌표
   x: 10,
   y: 200,
-  // 공룡 폭과 높이
+  // 도라에몽 폭과 높이
   width: 50,
   height: 50,
   draw() {
