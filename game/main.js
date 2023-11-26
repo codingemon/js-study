@@ -25,7 +25,7 @@ img1.src = "./Img/jingu.png";
 var img2 = new Image();
 img2.src = "./Img/doraemon.png";
 
-// 장애물도 역시 속성부터 object자료에 정리해두면 편리
+// 장애물도 역시 속성부터 object자료에 정리해두면 편리.
 // 장애물들은 width, height 이런게 각가 다를 수도 -> 비슷한 Object가 많이 필요
 class Cactus {
   constructor() {
