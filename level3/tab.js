@@ -35,7 +35,7 @@ $(".list").click(function (e) {
   탭열기(e.target.dataset.id);
 });
 
-// '숫자'를 넣어줘야지 여러가지 숫자를 대입해서 잘 작동합니다
+// '숫자'를 넣어줘야지 여러가지 숫자를 대입해서 잘 작동합니다..
 function 탭열기(숫자) {
   $(".tab-button").removeClass("orange");
   $(".tab-button").eq(숫자).addClass("orange");
