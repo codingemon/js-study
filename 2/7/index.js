@@ -3,7 +3,7 @@
 function 함수() {
   // let, const는 저런 행위 금지
   // undefined 자동으로 할당 안됨
-  // var: Hoisitng시 undefined 할당 됨
+  // var: 호이스팅시 undefined 할당 됨
   // let,const X
   console.log(안녕); //error
   let 안녕 = "Hello!";
