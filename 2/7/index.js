@@ -18,7 +18,7 @@ var 함수 = function () {
   var 안녕 = "Hello!";
 };
 
-// 문제3..
+// 문제3
 let a = 1;
 var 함수 = function () {
   a = 2;
