@@ -1,6 +1,6 @@
 // Quiz : template literals
 
-// Q1. 여기 문자가 있습니다.
+// Q1. 여기 문자가 있습니다
 // 자주 안씀
 // var pants = 20;
 // var socks = 100;
