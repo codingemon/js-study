@@ -45,7 +45,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 // 문제6. 이벤트리스너 반복시키기
-// let으로 바꾸면 해결
+// let으로 바꾸면 해결.
 var 버튼들 = document.querySelectorAll("button");
 var 모달창들 = document.querySelectorAll("div");
 
