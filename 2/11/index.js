@@ -1,5 +1,4 @@
 // 함수 파라미터 넣읋때
-
 function 더하기(a, b, c) {
   console.log(a + b + c);
 }
