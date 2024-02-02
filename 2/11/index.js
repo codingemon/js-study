@@ -22,7 +22,6 @@ var person = {
 };
 
 // person.인사();//안녕
-
 var person2 = {
   name: "이강인",
 };
