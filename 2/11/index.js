@@ -28,7 +28,7 @@ var person2 = {
 
 // person.인사()를 person2에 적용하고 싶을 때 apply를 쓰자
 // person.인사.apply(person2)
-// apply() 그냥 함수를 옮겨와서 실행해주세요.
+// apply() 그냥 함수를 옮겨와서 실행해주세요
 
 // apply / call 비슷함
 // 근데 apply는 파라미터를 array형태로 집어넣기 가능
